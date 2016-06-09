@@ -1,15 +1,15 @@
 // Version 0.1.12 with modifications:
 // - Support for grabWidth in options: https://github.com/Mango/slideout/pull/10
-// - Direct import of decouple and emitter dependencies
+// - Rename "require" to "_require" to not confuse browserify (webpack figures it out!)
 
-!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.Slideout=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.Slideout=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof _require=="function"&&_require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof _require=="function"&&_require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_require,module,exports){
 'use strict';
 
 /**
  * Module dependencies
  */
-var decouple = require('./decouple-0.0.2.js');
-var Emitter = require('./emitter-0.0.7.js');
+var decouple = _require('decouple');
+var Emitter = _require('emitter');
 
 /**
  * Privates
@@ -322,7 +322,7 @@ Slideout.prototype.destroy = function() {
  */
 module.exports = Slideout;
 
-},{"decouple":2,"emitter":3}],2:[function(require,module,exports){
+},{"decouple":2,"emitter":3}],2:[function(_require,module,exports){
 'use strict';
 
 var requestAnimFrame = (function() {
@@ -364,7 +364,7 @@ function decouple(node, event, fn) {
  */
 module.exports = decouple;
 
-},{}],3:[function(require,module,exports){
+},{}],3:[function(_require,module,exports){
 "use strict";
 
 var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
@@ -376,7 +376,7 @@ exports.__esModule = true;
  * @returns {Object} Returns a new instance of Emitter.
  * @example
  * // Creates a new instance of Emitter.
- * var Emitter = require('emitter');
+ * var Emitter = _require('emitter');
  *
  * var emitter = new Emitter();
  */

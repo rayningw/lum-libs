@@ -1,3 +1,8 @@
+if (typeof(window) != "undefined") {
+  require("./slideout.css");
+  require("./slideout-js.css");
+}
+
 var React = require("react"),
   T = React.PropTypes;
 
