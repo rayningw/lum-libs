@@ -14,6 +14,8 @@ var Slideout = React.createClass({
     isTouchScreen: T.func.isRequired,
     content: T.element.isRequired,
     menu: T.element.isRequired,
+    // Capture touch events in the grab area to prevent interaction with the main content
+    captureGrabArea: T.bool.isRequired,
     // Notified by the parent when it wants the slideout to toggle
     subscribeToToggle: T.func.isRequired
   },
@@ -60,7 +62,9 @@ var Slideout = React.createClass({
           {this.props.menu}
         </nav>
         <main ref="contentContainer">
-          <div id="grab-area" className={grabAreaClass} />
+          <div id="grab-area"
+               className={grabAreaClass}
+               style={{ display: (this.props.captureGrabArea ? "block" : "none" ) }} />
           {this.props.content}
         </main>
       </div>
